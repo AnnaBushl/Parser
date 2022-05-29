@@ -15,7 +15,7 @@ public class Parser {
         ArrayList<String> lines = new ArrayList<>();
         ArrayList<String> words = new ArrayList<>();
 
-        // Äëÿ BufferedReader
+        // Ğ”Ğ»Ñ BufferedReader
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line  = " ";
             while ((line = br.readLine()) != null) {
@@ -24,7 +24,7 @@ public class Parser {
             }
         }
 
-/*         //Äëÿ Scanner
+/*         //Ğ”Ğ»Ñ Scanner
           try (Scanner scanner = new Scanner(file).useDelimiter("\\s+") ) {
               String line  = " ";
               while (scanner.hasNextLine()) {
