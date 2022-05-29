@@ -1,34 +1,36 @@
 import java.io.File;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        File file = new File ("Text.txt");
-        Parser parser = new Parser ();
+        File file = new File("Text.txt");
+        Parser parser = new Parser();
+        parser.parse(file);
         ArrayList<String> lines = parser.parse(file);
-        String input = "Ежели";
+        ArrayList<String> words = new ArrayList<>();
+        String input = "(.*)[РЎСЃ]С‚СЂР°Рґ(.*)[^?!,.]";
+        Pattern pattern = Pattern.compile(input);
         int sum = 0;
-        for (String line:lines) {
-            if (input.equals(input)) {
+        for (String line: lines) {
+            if (pattern.matcher(line).find()){
+                System.out.println(line);
                 sum++;
             }
         }
-        if(sum!=0)
-        {
-            System.out.println("В данном тексте слов Страдание и его модификаций: "+ sum );
+        if (sum != 0){
+            System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ СЃР»РѕРІ РЎС‚Р°СЂР°РґР°РЅРёРµ Рё РѕРґРЅРѕРєРѕСЂРµРЅРЅС‹С… РІ С‚РµРєСЃС‚Рµ " + sum);
         }
-        else
-        {
-            System.out.println("В данном тексте нет слов Страдние и однокоренных");
+        else {
+            System.out.println("РўР°РєРёС… СЃР»РѕРІ РЅРµС‚");
         }
-
 
 
 
         int m = 0;
-        System.out.println("Таблица умножения");
+        System.out.println("РўР°Р±Р»РёС†Р° СѓРјРЅРѕР¶РµРЅРёСЏ");
 
         for (int i = 1; i<=10;i++){
             for (int k = 1; k<=10;k++){
